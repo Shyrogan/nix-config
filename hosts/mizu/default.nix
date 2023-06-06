@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../common/users/shyrogan.nix
+    ../common/users/shyrogan.nix
   ];
   
   networking = {
