@@ -1,6 +1,6 @@
 { inputs, outputs, ... }:
 {
   imports = [
-    ./global
+    ./global.nix
   ];
 }
