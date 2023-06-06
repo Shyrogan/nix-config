@@ -12,7 +12,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
-      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ];
+      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
 
       mkNixos = modules: nixpkgs.lib.nixosSystem {
@@ -25,8 +25,8 @@
       };
     in 
     {
-      nixosModules = import ./modules/nixos { inherit inputs outputs; };
-      packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
+      nixosModules = import ./modules/nixos;
+      homeManagerModules = import ./modules/home-manager;
 
       nixosConfigurations = {
         mizu = mkNixos [ ./hosts/mizu ];
