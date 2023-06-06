@@ -25,5 +25,5 @@ in
     packages = [ pkgs.home-manager ];
   };
 
-  home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
+  # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
 }
