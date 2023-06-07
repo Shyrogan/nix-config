@@ -6,6 +6,7 @@ in
   users.users.shyrogan = {
     isNormalUser = true;
     password = "...";
+    description="Sébastien VIAL"
     extraGroups = [
       "wheel"
       "video"
@@ -22,9 +23,8 @@ in
       "deluge"
     ];
 
-    packages = [ pkgs.home-manager ];
+    packages = [ pkgs.home-manager pkgs.git pkgs.vim ];
   };
 
-  boot.loader.systemd-boot.enable = true;
   # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
 }
