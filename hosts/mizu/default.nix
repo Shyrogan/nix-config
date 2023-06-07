@@ -25,6 +25,17 @@
   };
 
   services.getty.autologinUser = "shyrogan";
+  services.xserver = {
+    enable = true;
+    layout = "fr";
+    videoDrivers = [ "amdgpu" ];
+    desktopManager = {
+      defaultSession = "none+i3";
+    };
+    windowManager.i3 = {
+      enable = true;
+    };
+  };
   # Locales, keyboard
   console.keyMap = "fr";
   services.xserver = {
