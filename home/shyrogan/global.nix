@@ -2,7 +2,7 @@
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
-  ] ++ (builtins.attrValues outputs.homeManagerModules);
+  ]
 
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
