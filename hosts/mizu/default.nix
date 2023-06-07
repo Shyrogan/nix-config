@@ -27,7 +27,10 @@
   services.getty.autologinUser = "shyrogan";
   services.xserver = {
     enable = true;
+
     layout = "fr";
+    xkbVariant = "";
+
     videoDrivers = [ "amdgpu" ];
     desktopManager = {
       defaultSession = "none+i3";
@@ -38,10 +41,6 @@
   };
   # Locales, keyboard
   console.keyMap = "fr";
-  services.xserver = {
-    layout = "fr";
-    xkbVariant = "";
-  };
   i18n.defaultLocale = "en_US.UTF-8";
 
   system.stateVersion = "23.05";
