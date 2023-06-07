@@ -6,7 +6,7 @@ in
   users.users.shyrogan = {
     isNormalUser = true;
     password = "...";
-    description="Sébastien VIAL"
+    description="Sébastien VIAL";
     extraGroups = [
       "wheel"
       "video"
