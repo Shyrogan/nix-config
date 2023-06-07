@@ -33,6 +33,9 @@
 
     videoDrivers = [ "amdgpu" ];
     desktopManager = {
+      xterm.enable = false;
+    };
+    displayManager = {
       defaultSession = "none+i3";
     };
     windowManager.i3 = {
