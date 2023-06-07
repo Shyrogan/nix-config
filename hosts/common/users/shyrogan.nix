@@ -24,5 +24,6 @@ in
     packages = [ pkgs.home-manager ];
   };
 
+  boot.loader.grub.enable = true;
   # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
 }

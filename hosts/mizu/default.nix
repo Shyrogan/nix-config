@@ -11,7 +11,6 @@
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    loader.systemd-boot.enable = true;
   };
 
   programs = {
