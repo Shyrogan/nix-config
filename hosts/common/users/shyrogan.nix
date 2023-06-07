@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, home-manager, ... }:
 let ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
@@ -26,5 +26,5 @@ in
     packages = [ pkgs.home-manager pkgs.git pkgs.vim ];
   };
 
-  # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
+  home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
 }
