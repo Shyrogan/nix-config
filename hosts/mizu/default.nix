@@ -14,7 +14,7 @@
     loader.systemd-boot.enable = true;
   };
 
-  packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; });
+  packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; }));
 
   hardware = {
     opengl = {
