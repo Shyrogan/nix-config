@@ -28,6 +28,8 @@
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
 
+      packages = forEachPkgs (pkgs: (import ./pkgs { inherit pkgs; }));
+
       nixosConfigurations = {
         mizu = mkNixos [ ./hosts/mizu ];
       };
