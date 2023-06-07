@@ -2,6 +2,11 @@
 let ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
+  imports = [
+    # Import home-manager's NixOS module
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
   users.mutableUsers = false;
   users.users.shyrogan = {
     isNormalUser = true;
@@ -26,5 +31,11 @@ in
     packages = [ pkgs.home-manager pkgs.git pkgs.vim ];
   };
 
-  # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      # Import your home-manager configuration
+      shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
+    };
+  };
 }
