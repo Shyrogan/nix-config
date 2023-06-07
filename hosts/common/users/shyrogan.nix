@@ -5,7 +5,6 @@ in
   users.mutableUsers = false;
   users.users.shyrogan = {
     isNormalUser = true;
-    shell = pkgs.fish;
     extraGroups = [
       "wheel"
       "video"
