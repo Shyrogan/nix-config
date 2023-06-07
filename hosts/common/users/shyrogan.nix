@@ -26,5 +26,5 @@ in
     packages = [ pkgs.home-manager pkgs.git pkgs.vim ];
   };
 
-  home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
+  # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
 }
