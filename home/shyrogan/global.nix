@@ -1,11 +1,10 @@
 { inputs, lib, pkgs, config, outputs, ... }:
 {
   imports = [
-    inputs.impermanence.nixosModules.home-manager.impermanence
   ];
 
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays;
+    # overlays = builtins.attrValues outputs.overlays;
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
@@ -30,18 +29,5 @@
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.05";
     sessionPath = [ "$HOME/.local/bin" ];
-
-    persistence = {
-      "/persist/home/shyrogan" = {
-        directories = [
-          "Documents"
-          "Downloads"
-          "Pictures"
-          "Videos"
-          ".local/bin"
-        ];
-        allowOther = true;
-      };
-    };
   };
 }
