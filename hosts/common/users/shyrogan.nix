@@ -5,6 +5,7 @@ in
   users.mutableUsers = false;
   users.users.shyrogan = {
     isNormalUser = true;
+    password = "...";
     extraGroups = [
       "wheel"
       "video"
@@ -24,6 +25,6 @@ in
     packages = [ pkgs.home-manager ];
   };
 
-  boot.loader.grub.enable = true;
-  # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
+  boot.loader.systemd-boot.enable = true;
+  home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
 }
