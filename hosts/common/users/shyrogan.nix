@@ -26,5 +26,5 @@ in
   };
 
   boot.loader.systemd-boot.enable = true;
-  home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
+  # home-manager.users.shyrogan = import ../../../home/shyrogan/${config.networking.hostName}.nix;
 }
